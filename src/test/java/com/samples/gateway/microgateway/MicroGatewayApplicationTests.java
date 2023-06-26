@@ -4,15 +4,11 @@ import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
 import com.carrotsearch.junitbenchmarks.BenchmarkRule;
 import com.samples.gateway.microgateway.model.Product;
 import org.junit.BeforeClass;
-import org.junit.ClassRule;
 import org.junit.Rule;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 import org.junit.rules.TestRule;
-import org.junit.runner.RunWith;
+
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
