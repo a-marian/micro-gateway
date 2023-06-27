@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.mockserver.model.HttpResponse.response;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Testcontainers
 public class MicroGatewayApplicationTests {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MicroGatewayApplicationTests.class);
