@@ -22,7 +22,11 @@ public class MicroGatewayApplication {
 	@Bean
 	public Customizer<ReactiveResilience4JCircuitBreakerFactory> defaultCustomizer(){
 		return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
-				.circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
+				.circuitBreakerConfig(CircuitBreakerConfig.custom()
+						.slidingWindowSize(5)
+					//	.failureRateThreshold(50.0F)
+						.waitDurationInOpenState(Duration.ofMillis(30))
+						.build())
 				.timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofMillis(200)).build())
 				.build());
 
